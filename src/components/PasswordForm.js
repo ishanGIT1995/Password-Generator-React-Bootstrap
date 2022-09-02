@@ -21,6 +21,7 @@ let PasswordForm = () => {
 
         }
 
+
         let characterlist = '';
 
         if (includeLowercase) {
@@ -38,7 +39,6 @@ let PasswordForm = () => {
         if (includeSymbols) {
 
             characterlist = characterlist + specialCharacters;
-
         }
 
         setPassword(createPassword(characterlist));
@@ -49,13 +49,25 @@ let PasswordForm = () => {
         let password = '';
         const characterlistLength = characterlist.length;
 
-        for (let i = 0; i < passwordLength; i++) {
+        if (passwordLength < 10 || passwordLength > 20) {
 
-            const characterIndex = Math.floor(Math.random() * characterlistLength);
-            password = password + characterlist.charAt(characterIndex);
+            notify('password length should be at least 10 characters and no more than 20', true);
+
+            return password = "";
 
         }
-        return password;
+
+        else {
+
+            for (let i = 0; i < passwordLength; i++) {
+
+                const characterIndex = Math.floor(Math.random() * characterlistLength);
+                password = password + characterlist.charAt(characterIndex);
+
+            }
+            return password;
+
+        }
 
     }
 
@@ -105,6 +117,7 @@ let PasswordForm = () => {
 
         if (password === '') {
             notify('Nothing to copy', true);
+
 
         } else {
             copyToClipboard();
