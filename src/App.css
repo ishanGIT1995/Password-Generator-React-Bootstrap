@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-repeat: no-repeat;
 }
 
 .App-logo {
@@ -35,4 +40,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+
+  width: 500px;
+  height: 560px;
+  background-color: rgba(2, 13, 84, 0.841);
+  padding: 15px;
 }

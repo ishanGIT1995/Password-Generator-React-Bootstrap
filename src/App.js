@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import PasswordForm from './components/PasswordForm';
+import 'react-toastify/dist/ReactToastify.css';
 
-function App() {
+
+let App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+      <div className="container rounded-3">
+
+        <h1 className='text-warning mb-3'>Password Generator</h1>
+
+        <PasswordForm />
+
+      </div>
+
+
     </div>
   );
 }
